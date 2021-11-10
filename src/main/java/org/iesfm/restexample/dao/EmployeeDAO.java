@@ -1,5 +1,6 @@
 package org.iesfm.restexample.dao;
 
+import org.iesfm.restexample.Department;
 import org.iesfm.restexample.Employee;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public interface EmployeeDAO {
      * @return Devuelve true si el empleado existía
      */
     boolean delete(String nif);
+
+    Employee get(String nif);
 
     List<Employee> list(String departmentName);
 }

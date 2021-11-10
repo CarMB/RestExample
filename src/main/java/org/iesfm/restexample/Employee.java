@@ -1,5 +1,8 @@
 package org.iesfm.restexample;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Employee {
@@ -9,7 +12,12 @@ public class Employee {
     private String surname;
     private int zipCode;
 
-    public Employee(String nif, String name, String surname, int zipCode) {
+    @JsonCreator
+    public Employee(
+            @JsonProperty("nif") String nif,
+            @JsonProperty("name") String name,
+            @JsonProperty("surname") String surname,
+            @JsonProperty("zipcode") int zipCode) {
         this.nif = nif;
         this.name = name;
         this.surname = surname;

@@ -37,6 +37,11 @@ public class InMemoryEmployeeDAO implements EmployeeDAO {
     }
 
     @Override
+    public Employee get(String nif) {
+        return employees.get(nif);
+    }
+
+    @Override
     public List<Employee> list(String departmentName) {
         return list();
     }

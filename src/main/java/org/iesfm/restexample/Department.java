@@ -1,5 +1,8 @@
 package org.iesfm.restexample;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Department {
@@ -7,8 +10,10 @@ public class Department {
     private String name;
     private String description;
 
-
-    public Department(String name, String desription) {
+@JsonCreator
+    public Department(
+            @JsonProperty("name") String name,
+            @JsonProperty("description") String desription) {
         this.name = name;
         this.description = desription;
     }

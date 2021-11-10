@@ -10,4 +10,6 @@ public interface DepartmentDAO {
     void insert(Department department);
 
     Department get(String departmentName);
+
+    void delete(String departmentName);
 }

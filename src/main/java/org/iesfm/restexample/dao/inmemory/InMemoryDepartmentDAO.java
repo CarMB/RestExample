@@ -26,4 +26,9 @@ public class InMemoryDepartmentDAO implements DepartmentDAO {
     public Department get(String departmentName) {
         return departments.get(departmentName);
     }
+
+    @Override
+    public void delete(String departmentName) {
+        departments.remove(departmentName);
+    }
 }

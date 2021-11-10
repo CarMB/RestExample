@@ -7,12 +7,10 @@ public class Department {
     private String name;
     private String description;
 
+
     public Department(String name, String desription) {
         this.name = name;
         this.description = desription;
-    }
-
-    public Department() {
     }
 
     public String getName() {

@@ -30,12 +30,24 @@ public class DepartmentController {
     @RequestMapping(method = RequestMethod.GET, path = "/department/{departmentName}")
     public Department getDepartment(@PathVariable("departmentName") String departmentName) {
         Department department = departmentDAO.get(departmentName);
-        if(department == null) {
+        if (department == null) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, "department not found"
             );
         } else {
             return department;
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/department/{departmentName}")
+    public void deleteDepartment(@PathVariable("departmentName") String departmentName) {
+        Department department = departmentDAO.get(departmentName);
+        if (department == null) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "department not found"
+            );
+        } else {
+            departmentDAO.delete(departmentName);
         }
     }
 }
